@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Charan Amith | Game Developer | Unity Developer</title>
+  <meta name="description" content="Portfolio of Sai Charan Amith – Aspiring Game Developer specializing in Unity and C#, passionate about creating immersive 2D and 3D gaming experiences." />
+
+  <!-- Google Font: Sora & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet (Preserved Exactly) -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-name">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <span class="nav-index">Explore</span>
+      <nav class="nav-wrapper">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#portfolio" class="nav-link" data-index="01">Portfolio</a></li>
+          <li><a href="#about" class="nav-link" data-index="02">About</a></li>
+          <li><a href="#skills" class="nav-link" data-index="03">Skills</a></li>
+          <li><a href="#socials" class="nav-link" data-index="04">Socials</a></li>
+          <li><a href="#connect" class="nav-link" data-index="05">Connect</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <!-- Interactive gamer avatar stage -->
+        <div class="doll-stage">
+          <style>
+            @keyframes gamer-idle {
+              0%, 100% { transform: translateY(0) rotate(0deg); }
+              50% { transform: translateY(-4px) rotate(-1deg); }
+            }
+            @keyframes gamer-greet {
+              0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+              25% { transform: translateY(-7px) rotate(-2deg) scale(1.02); }
+              55% { transform: translateY(-3px) rotate(2deg) scale(1.02); }
+              80% { transform: translateY(-5px) rotate(-1deg) scale(1.01); }
+            }
+            .doll-avatar {
+              transform-origin: 50% 100%;
+              animation: gamer-idle 2.8s ease-in-out infinite;
+            }
+            #doll-wrapper:hover .doll-avatar,
+            #doll-wrapper:focus-within .doll-avatar {
+              animation: gamer-greet 1.15s ease-in-out infinite;
+            }
+            #doll-wrapper:hover .doll-speech,
+            #doll-wrapper:focus-within .doll-speech {
+              opacity: 1 !important;
+              transform: translateY(0) scale(1) !important;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .doll-avatar { animation: none; }
+            }
+          </style>
+          <div class="doll-canvas-wrapper" id="doll-wrapper" role="button" tabindex="0" aria-label="Animate Sai Charan and change pose" title="Hover to animate; click or press Enter to change pose">
+            <canvas id="doll-canvas" width="80" height="80" style="display: none;"></canvas>
+            <div class="doll-speech" id="doll-speech" aria-live="polite" style="position: absolute; top: -2px; right: -28px; z-index: 3; padding: 0.35rem 0.7rem; border: 2px solid var(--text-main); border-radius: 999px; background: var(--bg-card); color: var(--olive-dark); font: 700 0.8rem var(--font-mono); opacity: 0; transform: translateY(8px) scale(0.85); transition: opacity 0.2s ease, transform 0.2s var(--ease-out); pointer-events: none;">Hi!</div>
+            <img class="doll-avatar" src="assets/avatar-gamer-transparent.png" alt="Cartoon gamer wearing glasses, headphones, and holding a game controller" style="position: absolute; top: -18px; left: -15px; width: 220px; height: 220px; display: block; object-fit: contain; overflow: visible;" />
+            <svg class="doll-avatar" viewBox="0 0 220 240" role="img" aria-label="Cartoon gamer avatar wearing glasses and headphones" style="display: none;">
+              <defs>
+                <linearGradient id="gamer-hair" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#795437" />
+                  <stop offset="0.55" stop-color="#3b261b" />
+                  <stop offset="1" stop-color="#191515" />
+                </linearGradient>
+                <linearGradient id="gamer-skin" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffe2c0" />
+                  <stop offset="1" stop-color="#e99b72" />
+                </linearGradient>
+                <linearGradient id="gamer-shirt" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ef4641" />
+                  <stop offset="1" stop-color="#b9232c" />
+                </linearGradient>
+                <filter id="gamer-shadow" x="-30%" y="-30%" width="160%" height="170%">
+                  <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#242922" flood-opacity="0.22" />
+                </filter>
+              </defs>
+              <ellipse cx="110" cy="228" rx="74" ry="9" fill="#242922" opacity=".16" />
+              <path d="M56 222c3-37 25-57 54-57s51 20 54 57Z" fill="url(#gamer-shirt)" stroke="#5d1e26" stroke-width="3" />
+              <path d="M93 159v23c8 7 26 7 34 0v-23Z" fill="url(#gamer-skin)" />
+              <path d="M52 93c0-45 26-72 59-72s58 27 58 72c0 42-25 67-58 67s-59-25-59-67Z" fill="url(#gamer-skin)" stroke="#2a211d" stroke-width="4" filter="url(#gamer-shadow)" />
+              <path d="M51 83c-2-36 19-69 59-69 31 0 55 18 61 49l-14 23c-3-18-9-30-20-39-8 18-31 31-63 34l-19 18Z" fill="url(#gamer-hair)" stroke="#241a16" stroke-width="4" />
+              <path d="M61 70c2-29 21-45 45-51-13 13-21 27-23 45-8 5-15 9-22 16Z" fill="#936744" opacity=".7" />
+              <path d="M98 22 119 4l-2 26Z M119 23l24-16-9 29Z M75 36l-1-24 19 18Z" fill="#4a3021" stroke="#241a16" stroke-width="4" />
+              <path d="M47 80c-12 8-12 39 5 46M173 80c12 8 12 39-5 46" fill="none" stroke="#202225" stroke-width="12" stroke-linecap="round" />
+              <path d="M43 69c0-15 12-27 27-27M177 69c0-15-12-27-27-27" fill="none" stroke="#25272a" stroke-width="10" stroke-linecap="round" />
+              <path d="M38 116c0 12 7 20 17 20M182 116c0 12-7 20-17 20" fill="none" stroke="#101214" stroke-width="7" stroke-linecap="round" />
+              <g fill="#fff" stroke="#222a2a" stroke-width="3">
+                <rect x="57" y="77" width="48" height="29" rx="13" />
+                <rect x="115" y="77" width="48" height="29" rx="13" />
+                <path d="M105 87h10" fill="none" />
+              </g>
+              <g class="doll-eyes">
+                <ellipse cx="81" cy="91" rx="8" ry="10" fill="#5b8d35" />
+                <ellipse cx="139" cy="91" rx="8" ry="10" fill="#5b8d35" />
+                <circle id="doll-pupil-left" cx="81" cy="92" r="4" fill="#111" />
+                <circle id="doll-pupil-right" cx="139" cy="92" r="4" fill="#111" />
+                <circle cx="79.5" cy="90" r="1.3" fill="#fff" />
+                <circle cx="137.5" cy="90" r="1.3" fill="#fff" />
+              </g>
+              <path d="M108 94c-2 12-5 18 3 20" fill="none" stroke="#b56e58" stroke-width="3" stroke-linecap="round" />
+              <path d="M89 124c12 13 30 13 42 0" fill="#fff" stroke="#9e3f40" stroke-width="3" />
+              <path d="M83 171c8 8 18 12 27 12s19-4 27-12l-6-10c-14 6-28 6-42 0Z" fill="#f7f5f0" />
+              <path d="M55 177c-11 0-22 7-30 20l22 4 22-18Z" fill="url(#gamer-skin)" stroke="#2b211d" stroke-width="3" />
+              <path d="M165 177c11 0 22 7 30 20l-22 4-22-18Z" fill="url(#gamer-skin)" stroke="#2b211d" stroke-width="3" />
+              <path d="M30 195c-6-4-10-11-7-16 3-4 10-2 14 2l9 9" fill="none" stroke="#8d9395" stroke-width="9" stroke-linecap="round" />
+              <circle cx="34" cy="181" r="8" fill="#b9bec0" stroke="#44494b" stroke-width="3" />
+              <path d="M39 184l18 11" stroke="#44494b" stroke-width="4" />
+            </svg>
+            <div class="doll-ground-shadow"></div>
+          </div>
+
+        </div>
+
+        <h1 class="hero-name">I’m Sai Charan Amith.</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-role" style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main);">
+          I Create Games. I Build Experiences.
+        </p>
+        <p class="hero-role" style="font-size: 1.05rem; max-width: 680px; margin: 0 auto 0.75rem;">
+          Aspiring Game Developer specializing in Unity and C#, passionate about creating immersive 2D and 3D gaming experiences.
+        </p>
+        <p class="hero-role" style="font-size: 0.88rem; color: var(--text-muted);">
+          Primary: <strong>Game Developer | Unity Developer</strong> &bull; Secondary Interests: Software Development | Website Development | Data Science | AI/ML
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO SECTION (FEATURED PROJECT FIRST) ==================== -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-heading-centered">
+          <h2>Portfolio</h2>
+          <div class="section-divider"></div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem;">
+            A focused selection of game development work and interactive experiments.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- PRIMARY FEATURED PROJECT: HORROR FLAPPY BIRD -->
+          <article class="portfolio-card">
+            <div class="portfolio-visual-frame horror-poster-frame" title="Click to view Horror Flappy Bird">
+              <img class="portfolio-img horror-poster" src="assets/horror-flappy-bird-poster.png" alt="Horror Flappy Bird game poster showing a pixel bird, red moon, haunted castle, bats, and bloodied pipes" />
+            </div>
+            <h3 class="portfolio-label">Horror Flappy Bird</h3>
+            <p class="portfolio-subtext" style="color: var(--olive-dark); font-weight: 600;">
+              Primary Featured Project &bull; Unity &bull; C#
+            </p>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.4rem; text-align: center;">
+              A horror-themed 2D arcade game featuring custom bird animation, randomized obstacle generation, dynamic pipe gaps, player movement &amp; physics, collision detection, scoring, horror sound effects, and camera shake.
+            </p>
+            <div class="portfolio-links-row" style="margin-top: 0.75rem;">
+              <a href="https://charanamith.itch.io/horror-flappy-bird" target="_blank" rel="noopener noreferrer" style="font-weight: 600; text-decoration: underline;">Play Game (Itch.io) &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT & TECHNICAL STACK ==================== -->
+    <section class="about-stack-section" id="about">
+      <div class="container">
+        <div class="editorial-heading">
+          <span>02 // About &amp; Technical Stack</span>
+          <i></i>
+        </div>
+
+        <div class="editorial-row education-row">
+          <div class="editorial-label">Education</div>
+          <div class="education-content">
+            <div class="education-mark">KL</div>
+            <div>
+              <h3>B.Tech in Data Science</h3>
+              <p>KL University &mdash; Vijayawada <span>(2024 &mdash; 2028)</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-row focus-row">
+          <div class="editorial-label">Core focus</div>
+          <p><strong>Game development &amp; interactive design:</strong> Building responsive 2D and 3D experiences with expressive gameplay systems, thoughtful feedback, and polished player movement.</p>
+        </div>
+
+        <div class="editorial-row tools-row" id="skills">
+          <div class="editorial-label">Tech &amp; tools</div>
+          <div class="chip-list">
+            <span title="Primary game engine"><img src="https://cdn.simpleicons.org/unity/5B6E4E" alt="" />Unity <b>&nearr;</b></span>
+            <span title="Primary programming language"><img class="csharp-logo" src="assets/csharp-logo.png" alt="C# logo" />C# <b>&nearr;</b></span>
+            <span title="3D modelling and design"><img src="https://cdn.simpleicons.org/blender/5B6E4E" alt="" />Blender <b>&nearr;</b></span>
+            <span title="Version control"><img src="https://cdn.simpleicons.org/github/5B6E4E" alt="" />Git &amp; GitHub <b>&nearr;</b></span>
+            <span title="Game engine"><img src="https://cdn.simpleicons.org/unrealengine/5B6E4E" alt="" />Unreal Engine <b>&nearr;</b></span>
+            <span title="Game engine"><img src="https://cdn.simpleicons.org/GodotEngine/5B6E4E" alt="" />Godot <b>&nearr;</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SOCIAL MEDIA LINKS ==================== -->
+    <section class="socials-section" id="socials">
+      <div class="container">
+        <div class="section-heading-centered">
+          <h2>My Social Media Links</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="socials-grid">
+          <a href="https://itch.io/dashboard" target="_blank" rel="noopener noreferrer" class="social-button">
+            <span>Itch.io (Games)</span>
+          </a>
+          <a href="https://github.com/charanamith" target="_blank" rel="noopener noreferrer" class="social-button">
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/charan-amith-598387329/" target="_blank" rel="noopener noreferrer" class="social-button">
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="social-button">
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONNECT SECTION ==================== -->
+    <section class="connect-section" id="connect">
+      <div class="container">
+        <div class="section-heading-centered">
+          <h2>Connect</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="connect-wrapper">
+          <p class="connect-intro">
+            Interested in discussing game development, Unity projects, or gameplay programming? Send me a message below.
+          </p>
+
+          <form class="connect-form" id="connect-form">
+            <div class="form-group">
+              <label for="name">Name / Studio</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Alex from Indie Game Studio" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="alex@studio.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="e.g. Unity Collaboration Inquiry" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Tell me about your game project or inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div class="form-status" id="form-status" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Sai Charan Amith &bull; Game Developer | Unity Developer</p>
+      <div class="footer-top">
+        <a href="#hero">&uarr; Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
